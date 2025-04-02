@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\Template\Observers;
+namespace Yuges\Topicable\Observers;
 
-use Illuminate\Database\Eloquent\Model;
+use Yuges\Package\Models\Model;
 
-class TemplateObserver
+class TopicObserver
 {
     public function saving(Model $model): void
     {
