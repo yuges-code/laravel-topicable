@@ -15,7 +15,7 @@ return [
         ],
         'topicable' => [
             'key' => KeyType::Ulid,
-            'class' => \App\Models\User::class,
+            'class' => Yuges\Topicable\Models\Topicable::class,
             'allowed' => [
                 'classes' => [
                     # models...

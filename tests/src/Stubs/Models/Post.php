@@ -4,7 +4,7 @@ namespace Yuges\Topicable\Tests\Stubs\Models;
 
 use Yuges\Package\Models\Model;
 
-class User extends Model
+class Post extends Model
 {
-    protected $table = 'users';
+    protected $table = 'posts';
 }
