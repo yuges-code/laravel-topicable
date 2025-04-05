@@ -11,6 +11,16 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 trait HasTopics
 {
+    public function topic(Topic $topic): static
+    {
+        return $this->attachTopic($topic);
+    }
+
+    public function untopic(Topic $topic): static
+    {
+        return $this->detachTopic($topic);
+    }
+
     public function topics(): MorphToMany
     {
         /** @var Model $this */
@@ -28,7 +38,7 @@ trait HasTopics
 
     public function attachTopics(Collection $topics): static
     {
-        $this->topics()->attach($topics->pluck('id')->toArray());
+        Config::getAttachTopicAction($this)->execute($topics);
 
         return $this;
     }
@@ -42,14 +52,14 @@ trait HasTopics
 
     public function detachTopics(Collection $topics): static
     {
-        $this->topics()->detach($topics->pluck('id')->toArray());
+        Config::getDetachTopicAction($this)->execute($topics);
 
         return $this;
     }
 
     public function syncTopics(Collection $topics): static
     {
-        $this->topics()->sync($topics->pluck('id')->toArray());
+        Config::getSyncTopicAction($this)->execute($topics);
 
         return $this;
     }

@@ -11,10 +11,12 @@ return [
     'models' => [
         'topic' => [
             'key' => KeyType::Ulid,
+            'table' => 'topics',
             'class' => Yuges\Topicable\Models\Topic::class,
         ],
         'topicable' => [
             'key' => KeyType::Ulid,
+            'table' => 'topicables',
             'class' => Yuges\Topicable\Models\Topicable::class,
             'allowed' => [
                 'classes' => [
@@ -27,8 +29,8 @@ return [
     'permissions' => [],
 
     'actions' => [
-        'create' => Yuges\Subscribable\Actions\CreateSubscriptionAction::class,
-        'delete' => Yuges\Subscribable\Actions\DeleteSubscriptionAction::class,
-        'toggle' => Yuges\Subscribable\Actions\ToggleSubscriptionAction::class,
+        'sync' => Yuges\Topicable\Actions\SyncTopicAction::class,
+        'attach' => Yuges\Topicable\Actions\AttachTopicAction::class,
+        'detach' => Yuges\Topicable\Actions\DetachTopicAction::class,
     ],
 ];
