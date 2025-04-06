@@ -10,6 +10,10 @@ interface Topicable
 {
     public function topics(): MorphToMany;
 
+    public function topic(Topic $topic): static;
+
+    public function untopic(Topic $topic): static;
+
     public function attachTopic(Topic $topic): static;
 
     public function attachTopics(Collection $topics): static;
