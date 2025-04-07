@@ -2,8 +2,8 @@
 
 namespace Yuges\Topicable\Observers;
 
-use Illuminate\Database\Eloquent\Model;
 use Yuges\Topicable\Config\Config;
+use Illuminate\Database\Eloquent\Model;
 
 class TopicableObserver
 {
