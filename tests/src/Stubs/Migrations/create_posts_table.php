@@ -1,6 +1,5 @@
 <?php
 
-use Yuges\Package\Enums\KeyType;
 use Yuges\Package\Database\Schema\Schema;
 use Yuges\Package\Database\Schema\Blueprint;
 use Yuges\Package\Database\Migrations\Migration;
@@ -19,7 +18,7 @@ return new class extends Migration
         }
 
         Schema::create($this->table, function (Blueprint $table) {
-            $table->key(KeyType::Ulid);
+            $table->key();
 
             $table->string('title');
 

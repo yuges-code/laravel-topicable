@@ -16,7 +16,8 @@ trait HasTopics
         /** @var Model $this */
         return $this
             ->morphToMany(Config::getTopicClass(Topic::class), 'topicable')
-            ->using(Config::getTopicableClass(Topicable::class));
+            ->using(Config::getTopicableClass(Topicable::class))
+            ->withTimestamps();
     }
 
     public function topic(Topic $topic): static
@@ -31,7 +32,7 @@ trait HasTopics
 
     public function attachTopic(Topic $topic): static
     {
-        $this->attachTopics(Collection::make($topic));
+        $this->attachTopics(Collection::make([$topic]));
 
         return $this;
     }
@@ -45,7 +46,7 @@ trait HasTopics
 
     public function detachTopic(Topic $topic): static
     {
-        $this->detachTopics(Collection::make($topic));
+        $this->detachTopics(Collection::make([$topic]));
 
         return $this;
     }

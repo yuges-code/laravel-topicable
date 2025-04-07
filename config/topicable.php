@@ -3,6 +3,8 @@
 // Config for vendor/topicable
 
 use Yuges\Package\Enums\KeyType;
+use Yuges\Topicable\Observers\TopicObserver;
+use Yuges\Topicable\Observers\TopicableObserver;
 
 return [
     /*
@@ -10,12 +12,13 @@ return [
      */
     'models' => [
         'topic' => [
-            'key' => KeyType::Ulid,
+            'key' => KeyType::BigInteger,
             'table' => 'topics',
             'class' => Yuges\Topicable\Models\Topic::class,
+            'observer' => TopicObserver::class,
         ],
         'topicable' => [
-            'key' => KeyType::Ulid,
+            'key' => KeyType::BigInteger,
             'table' => 'topicables',
             'class' => Yuges\Topicable\Models\Topicable::class,
             'allowed' => [
@@ -23,6 +26,7 @@ return [
                     # models...
                 ],
             ],
+            'observer' => TopicableObserver::class,
         ],
     ],
 

@@ -7,8 +7,10 @@ use Yuges\Topicable\Models\Topic;
 use Illuminate\Support\Collection;
 use Yuges\Topicable\Models\Topicable;
 use Yuges\Topicable\Actions\SyncTopicAction;
+use Yuges\Topicable\Observers\TopicObserver;
 use Yuges\Topicable\Actions\AttachTopicAction;
 use Yuges\Topicable\Actions\DetachTopicAction;
+use Yuges\Topicable\Observers\TopicableObserver;
 use Yuges\Topicable\Interfaces\Topicable as TopicableInterface;
 
 class Config extends \Yuges\Package\Config\Config
@@ -29,6 +31,12 @@ class Config extends \Yuges\Package\Config\Config
     public static function getTopicTable(mixed $default = null): string
     {
         return self::get('models.topic.table', $default);
+    }
+
+    /** @return class-string<TopicObserver> */
+    public static function getTopicObserverClass(mixed $default = null): string
+    {
+        return self::get('models.topic.observer', $default);
     }
 
     /** @return class-string<Topicable> */
@@ -53,6 +61,12 @@ class Config extends \Yuges\Package\Config\Config
         return Collection::make(
             self::get('models.topicable.allowed.classes', $default)
         );
+    }
+
+    /** @return class-string<TopicableObserver> */
+    public static function getTopicableObserverClass(mixed $default = null): string
+    {
+        return self::get('models.topicable.observer', $default);
     }
 
     public static function getSyncTopicAction(
