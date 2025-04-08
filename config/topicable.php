@@ -1,6 +1,6 @@
 <?php
 
-// Config for vendor/topicable
+// Config for yuges/topicable
 
 use Yuges\Package\Enums\KeyType;
 use Yuges\Topicable\Observers\TopicObserver;

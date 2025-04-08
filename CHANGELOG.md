@@ -1,10 +1,6 @@
 # Changelog
 
-All notable changes to laravel-package-template will be documented in this file.
-
-## 1.0.1 - 2025-04-08
-
-**Full Changelog**: https://github.com/yuges-code/laravel-topicable/commits/1.0.1
+All notable changes to laravel-topicable will be documented in this file.
 
 ## 1.0.0 - 2025-02-27
 
