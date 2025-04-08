@@ -9,6 +9,9 @@ use Yuges\Topicable\Models\Topicable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
+/**
+ * @property Collection<array-key, Topic> $topics
+ */
 trait HasTopics
 {
     public function topics(): MorphToMany

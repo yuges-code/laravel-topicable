@@ -4,12 +4,13 @@ namespace Yuges\Topicable\Models;
 
 use Yuges\Package\Traits\HasTable;
 use Yuges\Topicable\Config\Config;
+use Yuges\Package\Traits\HasTimestamps;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Topicable extends MorphPivot
 {
-    use HasFactory, HasTable;
+    use HasFactory, HasTable, HasTimestamps;
 
     protected $table = 'topicables';
 

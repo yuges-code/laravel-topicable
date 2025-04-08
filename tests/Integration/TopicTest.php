@@ -18,7 +18,6 @@ class TopicTest extends TestCase
 
         $topic = Topic::query()->create([
             'name' => 'programming',
-            'slug' => 'programming',
         ]);
 
         $post->topic($topic);
