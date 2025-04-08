@@ -59,7 +59,7 @@ composer require yuges-code/laravel-topicable
 Publishing the config file (config/topicable.php) is optional:
 
 ```
-php artisan vendor:publish --provider="Yuges\Topicable\Providers\TopicableServiceProvider" --tag="topicable-config"
+php artisan vendor:publish --provider="Yuges\Topicable\Providers\TopicableServiceProvider" --tag="topicable-configs"
 ```
 
 ### → Publishing Migrations
