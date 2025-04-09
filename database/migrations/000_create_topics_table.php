@@ -32,8 +32,8 @@ return new class extends Migration
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
 
-            $table->string('name')->unique();
             $table->string('slug')->unique();
+            $table->string('name')->unique();
             $table->string('type')->nullable();
 
             $table->order();

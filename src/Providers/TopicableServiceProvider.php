@@ -3,8 +3,8 @@
 namespace Yuges\Topicable\Providers;
 
 use Yuges\Package\Data\Package;
-use Yuges\Topicable\Config\Config;
 use Yuges\Topicable\Models\Topic;
+use Yuges\Topicable\Config\Config;
 use Yuges\Topicable\Models\Topicable;
 use Yuges\Topicable\Observers\TopicObserver;
 use Yuges\Topicable\Exceptions\InvalidTopic;

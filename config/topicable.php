@@ -2,31 +2,27 @@
 
 // Config for yuges/topicable
 
-use Yuges\Package\Enums\KeyType;
-use Yuges\Topicable\Observers\TopicObserver;
-use Yuges\Topicable\Observers\TopicableObserver;
-
 return [
     /*
-     * FQCN (Fully Qualified Class Name) of the models to use for subscriptions
+     * FQCN (Fully Qualified Class Name) of the models to use for topics
      */
     'models' => [
         'topic' => [
-            'key' => KeyType::BigInteger,
             'table' => 'topics',
+            'key' => Yuges\Package\Enums\KeyType::BigInteger,
             'class' => Yuges\Topicable\Models\Topic::class,
-            'observer' => TopicObserver::class,
+            'observer' => Yuges\Topicable\Observers\TopicObserver::class,
         ],
         'topicable' => [
-            'key' => KeyType::BigInteger,
             'table' => 'topicables',
+            'key' => Yuges\Package\Enums\KeyType::BigInteger,
             'class' => Yuges\Topicable\Models\Topicable::class,
             'allowed' => [
                 'classes' => [
                     # models...
                 ],
             ],
-            'observer' => TopicableObserver::class,
+            'observer' => Yuges\Topicable\Observers\TopicableObserver::class,
         ],
     ],
 

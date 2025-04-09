@@ -17,6 +17,11 @@ class Config extends \Yuges\Package\Config\Config
 {
     const string NAME = 'topicable';
 
+    public static function getTopicTable(mixed $default = null): string
+    {
+        return self::get('models.topic.table', $default);
+    }
+
     /** @return class-string<Topic> */
     public static function getTopicClass(mixed $default = null): string
     {
@@ -28,15 +33,15 @@ class Config extends \Yuges\Package\Config\Config
         return self::get('models.topic.key', $default);
     }
 
-    public static function getTopicTable(mixed $default = null): string
-    {
-        return self::get('models.topic.table', $default);
-    }
-
     /** @return class-string<TopicObserver> */
     public static function getTopicObserverClass(mixed $default = null): string
     {
         return self::get('models.topic.observer', $default);
+    }
+
+    public static function getTopicableTable(mixed $default = null): string
+    {
+        return self::get('models.topicable.table', $default);
     }
 
     /** @return class-string<Topicable> */
@@ -48,11 +53,6 @@ class Config extends \Yuges\Package\Config\Config
     public static function getTopicableKeyType(mixed $default = null): KeyType
     {
         return self::get('models.topicable.key', $default);
-    }
-
-    public static function getTopicableTable(mixed $default = null): string
-    {
-        return self::get('models.topicable.table', $default);
     }
 
     /** @return Collection<array-key, class-string<Topicable>> */
