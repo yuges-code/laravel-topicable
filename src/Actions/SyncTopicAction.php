@@ -31,7 +31,7 @@ class SyncTopicAction
                 return (bool) $value;
             });
 
-        $this->topicable->topics()->sync($topics->pluck('id'));
+        $this->topicable->topics()->sync($ids);
 
         return $this->topicable;
     }

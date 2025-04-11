@@ -40,6 +40,9 @@ trait HasTopics
         return $this;
     }
 
+    /**
+     * @param Collection<array-key, Topic> $topics
+     */
     public function attachTopics(Collection $topics): static
     {
         Config::getAttachTopicAction($this)->execute($topics);
@@ -54,6 +57,9 @@ trait HasTopics
         return $this;
     }
 
+    /**
+     * @param Collection<array-key, Topic> $topics
+     */
     public function detachTopics(Collection $topics): static
     {
         Config::getDetachTopicAction($this)->execute($topics);
@@ -61,6 +67,9 @@ trait HasTopics
         return $this;
     }
 
+    /**
+     * @param Collection<array-key, Topic> $topics
+     */
     public function syncTopics(Collection $topics): static
     {
         Config::getSyncTopicAction($this)->execute($topics);
