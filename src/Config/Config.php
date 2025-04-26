@@ -25,7 +25,7 @@ class Config extends \Yuges\Package\Config\Config
     /** @return class-string<Topic> */
     public static function getTopicClass(mixed $default = null): string
     {
-        return self::get('model.topic.class', $default);
+        return self::get('models.topic.class', $default);
     }
 
     public static function getTopicKeyType(mixed $default = null): KeyType
